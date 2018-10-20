@@ -14,3 +14,9 @@
 **Data Source**:  [UCSD MPLab](http://mplab.ucsd.edu/wordpress/?page_id=398)
 
 ​	Description: 4000 labeled (smile/non-smile) face images.
+
+
+## Fashion MNIST
+
+[DataSet](https://github.com/zalandoresearch/fashion-mnist)
+
