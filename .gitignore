@@ -1,3 +1,6 @@
+
+.vscode/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -21,6 +24,8 @@ sdist/
 var/
 wheels/
 *.egg-info/
+.idea
+.idea/
 .installed.cfg
 *.egg
 MANIFEST
