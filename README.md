@@ -20,6 +20,8 @@
 
   * [Video](https://www.youtube.com/watch?v=dZFjtG4EAEg)
   * [Code](https://github.com/aquibjaved/Real-time-Smile-Recognition/blob/master/smile_recognition_training_with_tensorflow.ipynb)
+  * [cnn_keypoint_detection_github_code](https://github.com/ewrfcas/Machine-Learning-Toolbox/blob/master/CNN_facial_keypoint_detection_ex.ipynb)
+  * [dlib_68_demo](https://my.oschina.net/wujux/blog/1622781)
 
 * Expression Recognition with Keras
 
