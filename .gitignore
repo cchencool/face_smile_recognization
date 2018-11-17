@@ -1,3 +1,7 @@
+
+01_code/01_dataset_GENKI_4K/model/model_face_rec.h5
+01_code/01_dataset_GENKI_4K/model/shape_predictor_68_face_landmarks.dat
+
 .vscode/
 
 # Byte-compiled / optimized / DLL files
