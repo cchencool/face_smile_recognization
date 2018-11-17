@@ -23,7 +23,7 @@ if __name__ == '__main__':
     md = auxiliary.Mouth_Decector()
 
     # model = load_model('./model_by_nn_48-28_acc091.h5')
-    model = joblib.load('./logistic.joblib')
+    model = joblib.load('./68pts_svm.joblib')
 
     cv.namedWindow('hello_smile')
 
