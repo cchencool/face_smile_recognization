@@ -86,7 +86,7 @@ if __name__ == '__main__':
         s1 = time()
         for i, face in enumerate(faces_detected):
 
-            img_org = cv.rectangle(img_org.copy(), (face.left(), face.top()), (face.right(), face.bottom()), (255, 0, 0), 1)
+            img_org = cv.rectangle(img_org.copy(), (face.left(), face.top()), (face.right(), face.bottom()), (255, 255, 255), 2)
             print("Detection {}: Left: {} Top: {} Right: {} Bottom: {} ".format(
                 i, face.left(), face.top(), face.right(), face.bottom()))
 
@@ -104,7 +104,7 @@ if __name__ == '__main__':
             if is_smile:
                 cv.putText(img_org,
                            'smile',
-                           (face.left(), face.top() - 10),
+                           (face.left()+10, face.top() - 10),
                            cv.FONT_HERSHEY_DUPLEX,
                            2,
                            (97, 50, 205)) # 92, 92, 205
@@ -114,7 +114,7 @@ if __name__ == '__main__':
                            (face.left(), face.top() - 10),
                            cv.FONT_HERSHEY_DUPLEX,
                            1.5,
-                           (28, 28, 28))
+                           (0, 0, 0))
 
             print(f"{i}, is_smile: {is_smile}, smile_prop: {1}")
 
