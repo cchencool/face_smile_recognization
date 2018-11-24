@@ -52,7 +52,7 @@ if __name__ == '__main__':
     predictor = dlib.shape_predictor('../01_dataset_GENKI_4K/model/shape_predictor_68_face_landmarks.dat')
 
     # model = joblib.load('../01_dataset_GENKI_4K/model/68pts_svm.joblib')
-    model = joblib.load('../01_dataset_GENKI_4K/model/68pts_svm.joblib')
+    model = joblib.load('../01_dataset_GENKI_4K/model/32pts_svm.joblib')
 
 
     cv.namedWindow('hello_smile')
@@ -101,12 +101,20 @@ if __name__ == '__main__':
 
             is_smile = True if prediction > 0 else False
 
-            cv.putText(img_org, 
-                       'smile' if is_smile else 'not smile',  
-                       (face.left(), face.top() - 5),
-                       cv.FONT_HERSHEY_PLAIN, 
-                       2, 
-                       (0,0,255))
+            if is_smile:
+                cv.putText(img_org,
+                           'smile',
+                           (face.left(), face.top() - 10),
+                           cv.FONT_HERSHEY_DUPLEX,
+                           2,
+                           (97, 50, 205)) # 92, 92, 205
+            else:
+                cv.putText(img_org,
+                           'not smile',
+                           (face.left(), face.top() - 10),
+                           cv.FONT_HERSHEY_DUPLEX,
+                           1.5,
+                           (28, 28, 28))
 
             print(f"{i}, is_smile: {is_smile}, smile_prop: {1}")
 

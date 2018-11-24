@@ -66,7 +66,7 @@ class Mouth_Decector(object):
             face_gray = gray[y:y+h, x:x+w]
             face_color = img[y:y+h, x:x+w]
             if is_square_face:
-                cv.rectangle(img, (x,y), (x+w, y+h), (255,0,0), 2)
+                cv.rectangle(img, (x,y), (x+w, y+h), (255,255,255), 2)
         #     imshow(img)
             mouths = self.harr_mouth.detectMultiScale(face_gray)
             mouth = self.find_lowest_square(mouths, tag='mouth')
@@ -76,7 +76,7 @@ class Mouth_Decector(object):
             if len(mouth) > 0:
                 mx, my, mw, mh = mouth
                 if is_square_mouth:
-                    cv.rectangle(face_color, (mx-1,my-1), (mx+mw+1, my+mh+1), (0,255,0), 1)
+                    cv.rectangle(face_color, (mx-1,my-1), (mx+mw+1, my+mh+1), (100,230,255), 2)
     #             imshow(img)
                 return x+mx, y+my, mw, mh
         return []
