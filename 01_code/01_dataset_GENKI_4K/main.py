@@ -13,6 +13,7 @@ from keras.models import load_model
 from skimage.io import imshow, imread, imsave
 
 import auxiliary
+import random
 
 import csv
 
@@ -43,7 +44,8 @@ if __name__ == '__main__':
         start_time = time.time()
 
         _, frame = cap.read()
-        img_org = cv.resize(frame, (640, 360))
+        # img_org = cv.resize(frame, (640, 360))
+        img_org = frame 
         # mouths = md.find_mouths(img_org, is_square_face=True, is_square_mouth=True)
 
         # if (len(mouths) > 0):
@@ -55,7 +57,6 @@ if __name__ == '__main__':
         for mouth, fw in md.find_mouths(img_org, is_square_face=True, is_square_mouth=True):
             this_start = time.time()
             # loop_time.append('Img '+str(count)+' start process at '+str(this_start))
-
 
             x, y, w, h = mouth
             mouth_img = md.get_partial(img_org, x, y, w, h)
@@ -76,6 +77,10 @@ if __name__ == '__main__':
 
             is_smile = result[0][1] - result[0][0] > rate
 
+#            rand_num = random.randrange(0, 10)
+#            candidate = np.array([1,1,1,1,1,1,1,1,0,0])
+#            is_smile = candidate[rand_num]
+
             if is_smile:
                 cv.putText(img_org,
                                'smile',
@@ -91,7 +96,7 @@ if __name__ == '__main__':
                            1.5,
                            (28, 28, 28))
 
-            print(f"{mouth}, is_smile: {is_smile}, smile_prop: {result[0][1]}")
+            print(f"{mouth}, is_smile: {is_smile}")#, smile_prop: {result[0][1]}")
 
             this_end = time.time()
 
